@@ -4,7 +4,7 @@ Billetera digital desarrollada paso a paso para aprender fundamentos de desarrol
 
 
 1. **Estructura HTML inicial**
-   - Creación de pantallas: `menu.html`, `sendmoney.html`, `receive.html`.
+   - Creación de pantallas: `menu.html`, `sendmoney.html` y más
    - Formularios para enviar, recibir y agregar contactos.
 
 2. **Estilos CSS**
@@ -28,12 +28,8 @@ Billetera digital desarrollada paso a paso para aprender fundamentos de desarrol
    - Uso de clases y funciones claras.
 
 6. **Control de versiones con Git y GitHub**
-   - Inicialización del repositorio `Proyecto-Alke-Wallet`.
-   - Commits con mensajes claros (`feat`, `fix`, `docs`, etc.).
-   - Creación y fusión de ramas por funcionalidad.
-   - Pull Requests para revisión de código.
+   - Inicialización del repositorio `Alke-Wallet`.
 
----
 
  Objetivo
 Gestionar el saldo y movimientos de una billetera digital de forma clara y educativa, aplicando buenas prácticas de desarrollo web y control de versiones.
