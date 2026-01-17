@@ -1,0 +1,142 @@
+/* RESET BÁSICO */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* FUENTE Y FONDO GENERAL */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  padding: 20px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* ENCABEZADOS */
+h1,
+h2,
+h3,
+h5 {
+  background: linear-gradient(90deg, #0047a8, #00c2d5); /* color3 + color5 */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* CONTENEDORES PRINCIPALES */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* TARJETAS DE INFORMACIÓN */
+.card {
+  background: rgba(250, 218, 107, 0.3); /* color2 translúcido */
+  border-radius: 12px;
+  border-left: 6px solid #0082bd; /* color4 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-left-color: #ffbd64; /* color1 en hover */
+}
+
+/* OPCIONES DEL MENÚ EN VERTICAL */
+.menu-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.menu-options .card {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* BOTONES */
+button,
+.btn-primary,
+.btn-secondary {
+  background-color: #0047a8; /* color3 */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover,
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: #0082bd; /* color4 */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* SALDO GENERAL */
+#saldo,
+#saldoMenu {
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  transition: all 0.3s ease;
+} /* Saldo positivo */
+.saldo-positive {
+  color: #00c2d5; /* turquesa (color5) */
+  background-color: #fada6b; /* amarillo suave (color2) */
+  box-shadow: 0 0 8px rgba(0, 194, 213, 0.4);
+} /* Saldo negativo */
+.saldo-negative {
+  color: #dc3545; /* rojo alerta */
+  background-color: #ffbd64; /* naranja cálido (color1) */
+  box-shadow: 0 0 8px rgba(220, 53, 69, 0.4);
+}
+/* ENLACE DE CERRAR SESIÓN */
+.logout-link {
+  color: #dc3545;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+  background-color: #ffbd64; /* color1 */
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.logout-link:hover {
+  color: #bb2d3b;
+  text-decoration: underline;
+  background-color: #fada6b; /* color2 */
+}
+
+/* RESPONSIVIDAD */
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+  .menu-options .card {
+    max-width: 100%;
+  }
+}

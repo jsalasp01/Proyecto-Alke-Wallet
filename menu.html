@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Menú | Alke Wallet</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Pequeño efecto de escala para hover */
+      .menu-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .menu-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Distribución vertical */
+      .menu-options {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* espacio entre tarjetas */
+        align-items: center;
+      }
+      .menu-options .card {
+        width: 100%;
+        max-width: 400px; /* ancho fijo para que no se estiren demasiado */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="text-center text-primary mb-4" id="welcomeTitle">Bienvenido a Alke Wallet</h2>
+      <!-- Contenedor para mensaje dinámico -->
+      <div id="mensaje" class="text-center mt-2"></div>
+
+      <!-- Opciones en vertical -->
+      <div class="menu-options mt-4">
+        <div class="card menu-card text-center p-3">
+          <h5 class="card-title">Saldo disponible</h5>
+          <p id="saldoMenu" class="fs-4 text-success">$10000</p>
+        </div>
+
+        <div class="card menu-card text-center p-3">
+          <h5 class="card-title">Enviar y Recibir dinero</h5>
+          <a href="sendmoney.html" class="btn btn-primary mt-2">Ir</a>
+        </div>
+
+        <div class="card menu-card text-center p-3">
+          <h5 class="card-title">Movimientos</h5>
+          <a href="transactions.html" class="btn btn-primary mt-2">Ir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón de cerrar sesión -->
+    <div class="text-center mt-4">
+      <a href="#" id="logoutLink" class="logout-link">🚪 Cerrar sesión</a>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Tu JS -->
+    <script src="scripts.js"></script>
+
+    <!-- Animaciones específicas para menu.html -->
+    <script>
+      $(document).ready(function () {
+        // Animación de bienvenida en el título
+        $('#welcomeTitle').hide().slideDown(800).css('color', '#0d6efd').fadeOut(200).fadeIn(200);
+
+        // Animación del saldo al cargar
+        $('#saldoMenu').hide().fadeIn(1000).css('color', 'green');
+
+        // Efecto rebote en botones
+        $('.btn').on('click', function () {
+          $(this).animate({ paddingLeft: '20px' }, 200).animate({ paddingLeft: '10px' }, 200);
+        });
+
+        // Mostrar mensaje de bienvenida si el login fue exitoso
+        if (localStorage.getItem('loginExitoso') === 'true') {
+          $('#mensaje')
+            .hide()
+            .html(
+              '<p class="text-success">🎉 Login exitoso, bienvenida Josseline a tu billetera digital</p>'
+            )
+            .fadeIn(600)
+            .delay(2500)
+            .fadeOut(600);
+          localStorage.removeItem('loginExitoso');
+        }
+      });
+    </script>
+  </body>
+</html>
